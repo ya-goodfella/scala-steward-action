@@ -58,7 +58,7 @@ export async function install(app: string): Promise<void> {
   let code = await exec.exec('cs', ['install', app, '--install-dir', binPath], {
     silent: false,
     ignoreReturnCode: true,
-    listeners: {stdline: core.info, errline: core.debug}
+    listeners: {stdline: core.info, errline: core.info}
   })
 
   if (code !== 0) {
