@@ -56,7 +56,7 @@ export async function install(app: string): Promise<void> {
   const binPath = path.join(homedir, 'bin')
 
   let code = await exec.exec('cs', ['install', app, '--install-dir', binPath], {
-    silent: true,
+    silent: false,
     ignoreReturnCode: true,
     listeners: {stdline: core.info, errline: core.debug}
   })
@@ -105,7 +105,7 @@ export async function launch(
   )
 
   const code = await exec.exec('cs', launchArgs, {
-    silent: false,
+    silent: true,
     ignoreReturnCode: true,
     listeners: {stdline: core.info, errline: core.error}
   })
