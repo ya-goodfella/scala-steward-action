@@ -105,7 +105,7 @@ export async function launch(
   )
 
   const code = await exec.exec('cs', launchArgs, {
-    silent: true,
+    silent: false,
     ignoreReturnCode: true,
     listeners: {stdline: core.info, errline: core.error}
   })
